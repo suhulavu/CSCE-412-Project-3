@@ -5,8 +5,10 @@
 
 
 class WebServer {
+    private:
+        int id;
     public:
-        WebServer();
+        WebServer(int id);
         void process_request(Request req);
 };
 
