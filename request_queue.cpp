@@ -11,3 +11,7 @@ Request RequestQueue::pop() {
     queue.pop();
     return req;
 }
+
+int RequestQueue::size() {
+    return queue.size();
+}
