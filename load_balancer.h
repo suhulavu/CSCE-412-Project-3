@@ -21,6 +21,7 @@ class LoadBalancer {
         void increment_clock_cycle();
         void adjust_server_count();
         void distribute_requests();
+        int get_clock_cyle();
 };
 
 
