@@ -15,3 +15,7 @@ Request RequestQueue::pop() {
 int RequestQueue::size() {
     return queue.size();
 }
+
+bool RequestQueue::empty() {
+    return queue.empty();
+}

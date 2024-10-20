@@ -13,6 +13,7 @@ class RequestQueue {
         void push(Request req);
         Request pop();
         int size();
+        bool empty();
 };
 
 
