@@ -108,6 +108,7 @@ int main() {
     // output
     std::cout << "Final Queue Size: " << load_balancer.get_remaining_requests() << " requests." << endl;
     std::cout << "Final Number of Active Servers: " << load_balancer.get_active_servers() << endl;
+    std::cout << "Final Number of Inactive Servers: " << (num_servers - load_balancer.get_active_servers()) << endl;
 
     return 0;
 }

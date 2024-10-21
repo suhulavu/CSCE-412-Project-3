@@ -28,7 +28,9 @@ void \mbox{\hyperlink{classLoadBalancer_a567cc79206278902d36795dfa1d7ef66}{distr
 int \mbox{\hyperlink{classLoadBalancer_a52616bb92a6aa00d9cac339a903e5bbf}{get\+\_\+clock\+\_\+cyle}} ()
 \begin{DoxyCompactList}\small\item\em Gets the current clock cycle of the simulation. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classLoadBalancer_a12974189c3c57ceef546b21eb7a767be}{get\+\_\+remaining\+\_\+requests}} ()
-\begin{DoxyCompactList}\small\item\em Gets the number of remaining requests in the request queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Gets the number of remaining requests in the request queue. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classLoadBalancer_af62ca365fde7d6d631a5eef7b5089b21}{get\+\_\+active\+\_\+servers}} ()
+\begin{DoxyCompactList}\small\item\em Gets the number of active webservers. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -68,6 +70,19 @@ Adds a new request to the load balancer\textquotesingle{}s queue.
 {\em req} & The web request to be added. \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{classLoadBalancer_af62ca365fde7d6d631a5eef7b5089b21}\label{classLoadBalancer_af62ca365fde7d6d631a5eef7b5089b21}} 
+\index{LoadBalancer@{LoadBalancer}!get\_active\_servers@{get\_active\_servers}}
+\index{get\_active\_servers@{get\_active\_servers}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{get\_active\_servers()}{get\_active\_servers()}}
+{\footnotesize\ttfamily int Load\+Balancer\+::get\+\_\+active\+\_\+servers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the number of active webservers. 
+
+\begin{DoxyReturn}{Returns}
+The number active servers as an integer. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classLoadBalancer_a52616bb92a6aa00d9cac339a903e5bbf}\label{classLoadBalancer_a52616bb92a6aa00d9cac339a903e5bbf}} 
 \index{LoadBalancer@{LoadBalancer}!get\_clock\_cyle@{get\_clock\_cyle}}
 \index{get\_clock\_cyle@{get\_clock\_cyle}!LoadBalancer@{LoadBalancer}}
