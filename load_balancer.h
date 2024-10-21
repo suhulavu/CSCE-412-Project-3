@@ -11,7 +11,8 @@
  */
 class LoadBalancer {
     private:
-        int num_servers; /**< The current number of active servers. */
+        int num_servers; /**< The current number of servers. */
+        int active_servers; /**< The current number of active servers. */
         int curr_clock_cycle; /**< The current clock cycle of the simulation. */
         RequestQueue queue; /**< The queue holding the incoming web requests. */
         std::vector<WebServer> servers; /**< A list of web servers used to process requests. */
@@ -65,6 +66,12 @@ class LoadBalancer {
          * @return The number of remaining requests as an integer.
          */
         int get_remaining_requests();
+
+        /**
+         * @brief Gets the number of active webservers.
+         * @return The number active servers as an integer.
+         */
+        int get_active_servers();
 };
 
 

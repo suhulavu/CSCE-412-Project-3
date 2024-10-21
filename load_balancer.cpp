@@ -1,7 +1,7 @@
 #include "load_balancer.h"
 #include <iostream>
 
-LoadBalancer::LoadBalancer(int num_servers) : num_servers(num_servers), curr_clock_cycle(0) {
+LoadBalancer::LoadBalancer(int num_servers) : num_servers(num_servers), curr_clock_cycle(1), active_servers(num_servers) {
     for (int i = 0; i < num_servers; i++) {
         WebServer server = WebServer(i + 1);
         servers.push_back(server);
@@ -9,18 +9,15 @@ LoadBalancer::LoadBalancer(int num_servers) : num_servers(num_servers), curr_clo
 }
 
 void LoadBalancer::allocate_server() {
-    WebServer new_server = WebServer(num_servers + 1);
-    servers.push_back(new_server);
-    num_servers++;
-    cout << "Allocated Server. Total # of Servers: " << num_servers << endl;
+    active_servers++;
+    cout << "Allocated Server. Total # of Active Servers: " << active_servers << endl;
 }
 
 void LoadBalancer::deallocate_server() {
     // need a minimum of one server
     if (num_servers >= 2) {
-        servers.pop_back();
-        num_servers--;
-        cout << "Deallocated Server. Total # of Servers: " << num_servers << endl;
+        active_servers--;
+        cout << "Deallocated Server. Total # of Active Servers: " << active_servers << endl;
     }
 }
 
@@ -33,18 +30,18 @@ void LoadBalancer::increment_clock_cycle() {
 }
 
 void LoadBalancer::adjust_server_count() {
-    if (queue.size() < num_servers) {
+    if (queue.size() < active_servers) {
         deallocate_server();
     }
 
-    if (queue.size() > num_servers * 2) {
+    if (queue.size() > active_servers * 2 && active_servers < num_servers) {
         allocate_server();
     }
 }
 
 void LoadBalancer::distribute_requests() {
     if (!queue.empty()) {
-        for (int i = 0; i < num_servers; i++) {
+        for (int i = 0; i < active_servers; i++) {
             if (!queue.empty()) {
                 Request req = queue.pop();
                 servers.at(i).process_request(req);
@@ -59,4 +56,8 @@ int LoadBalancer::get_clock_cyle() {
 
 int LoadBalancer::get_remaining_requests() {
     return queue.size();
+}
+
+int LoadBalancer::get_active_servers() {
+    return active_servers;
 }
