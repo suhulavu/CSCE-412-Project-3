@@ -17,3 +17,17 @@ string generate_ip() {
                 "." + to_string(third) + "." + to_string(fourth);
     return ip;
 }
+
+
+Request generate_request() {
+    Request req;
+    req.ip_in = generate_ip();
+    req.ip_out = generate_ip();
+    req.time = rand() % 10 + 1;
+    if (rand() % 2 == 0) {
+        req.job_type = 'P';
+    }
+    else {
+        req.job_type = 'S';
+    }
+}

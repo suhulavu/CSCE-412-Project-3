@@ -3,8 +3,8 @@
 using namespace std;
 
 struct Request {
-    string ip_in;
-    string ip_out;
-    int time;
-    char job_type;
+    string ip_in; // incoming ip address
+    string ip_out; //outgoing ip address
+    int time; // processing time in ms
+    char job_type; // p for processing or s for streaming
 };
