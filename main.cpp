@@ -60,15 +60,15 @@ int main() {
         // process requests on current clock cycle
         load_balancer.distribute_requests();
 
-        // 20% chance to add request to queue
-        if (rand() % 100 < 20) {
+        // 80% chance to add request to queue
+        if (rand() % 100 < 80) {
             Request new_req = generate_request();
             cout << "New request added to request queue." << endl;
             load_balancer.add_request(new_req);
         }
 
         // dynamically adjust servers
-        // load_balancer.adjust_server_count();
+        load_balancer.adjust_server_count();
 
         // increment clock cycle
         load_balancer.increment_clock_cycle();

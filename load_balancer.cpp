@@ -37,7 +37,7 @@ void LoadBalancer::adjust_server_count() {
         deallocate_server();
     }
 
-    if (queue.size() > num_servers * 5) {
+    if (queue.size() > num_servers * 2) {
         allocate_server();
     }
 }
