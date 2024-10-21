@@ -74,7 +74,7 @@ int main() {
 
     // print initial conditions
     std::cout << "Initial Queue Size: " << load_balancer.get_remaining_requests() << " requests." << endl;
-    std::cout << "Request completion time is between 1 and 5 milliseconds." << endl;
+    std::cout << "Request completion time is between 1 and 10 milliseconds." << endl;
     std::cout << "Total Number of Servers: " << load_balancer.get_active_servers() << endl;
 
 
