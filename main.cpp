@@ -8,6 +8,11 @@
 
 using namespace std;
 
+
+/**
+ * @brief Generates a random IP address.
+ * @return A string representing a randomly generated IP address.
+ */
 string generate_ip() {
     int first = rand() % 256;
     int second = rand() % 256;
@@ -19,7 +24,10 @@ string generate_ip() {
     return ip;
 }
 
-
+/**
+ * @brief Generates a random web request.
+ * @return A Request object with randomly generated IP addresses, processing time, and job type.
+ */
 Request generate_request() {
     Request req;
     req.ip_in = generate_ip();
@@ -35,7 +43,16 @@ Request generate_request() {
 }
 
 
-
+/**
+ * @brief The main function that simulates the load balancer handling web requests.
+ * 
+ * The program initializes a load balancer with a specified number of servers and simulates
+ * the processing of web requests over a given number of clock cycles. The simulation
+ * includes generating new requests, distributing them to servers, and adjusting the number
+ * of servers dynamically.
+ * 
+ * @return 0 on successful execution.
+ */
 int main() {
     // seed rng
     srand(time(NULL));
@@ -75,6 +92,9 @@ int main() {
 
         // increment clock cycle
         load_balancer.increment_clock_cycle();
+
+        // output number of requests remaining
+        cout << "Number of requests remaining: " << load_balancer.get_remaining_requests() << endl;
     }
 
     return 0;

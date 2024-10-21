@@ -56,3 +56,7 @@ void LoadBalancer::distribute_requests() {
 int LoadBalancer::get_clock_cyle() {
     return curr_clock_cycle;
 }
+
+int LoadBalancer::get_remaining_requests() {
+    return queue.size();
+}
