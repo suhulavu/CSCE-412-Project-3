@@ -1,3 +1,6 @@
+#ifndef REQUEST_H
+#define REQUEST_H
+
 #include <string>
 
 using namespace std;
@@ -8,3 +11,5 @@ struct Request {
     int time; // processing time in ms
     char job_type; // p for processing or s for streaming
 };
+
+#endif

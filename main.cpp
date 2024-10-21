@@ -4,6 +4,7 @@
 #include <string>
 
 #include "load_balancer.h"
+#include "request.h"
 
 using namespace std;
 
@@ -30,4 +31,48 @@ Request generate_request() {
     else {
         req.job_type = 'S';
     }
+    return req;
+}
+
+
+
+int main() {
+    // seed rng
+    srand(time(NULL));
+
+    // get user inputs
+    int num_servers, num_clock_cycles;
+    cout << "Enter total number of web servers: ";
+    cin >> num_servers;
+    cout << "Enter number of clock cycles: ";
+    cin >> num_clock_cycles;
+
+    // fill load balancer with requests
+    LoadBalancer load_balancer(num_servers);
+    const int INITIAL_REQUESTS = num_servers * 100;
+    for (int i = 0; i < INITIAL_REQUESTS; i++) {
+        load_balancer.add_request(generate_request());
+    }
+
+    // run simulation
+    while (load_balancer.get_clock_cyle() <= num_clock_cycles) {
+        cout << "Current Clock Cycle: " << load_balancer.get_clock_cyle() << endl;
+        // process requests on current clock cycle
+        load_balancer.distribute_requests();
+
+        // 20% chance to add request to queue
+        if (rand() % 100 < 20) {
+            Request new_req = generate_request();
+            cout << "New request added to request queue." << endl;
+            load_balancer.add_request(new_req);
+        }
+
+        // dynamically adjust servers
+        // load_balancer.adjust_server_count();
+
+        // increment clock cycle
+        load_balancer.increment_clock_cycle();
+    }
+
+    return 0;
 }
