@@ -1,4 +1,4 @@
 .vscode/
 load_balancer_sim
-output.txt
+*.txt
 *.o

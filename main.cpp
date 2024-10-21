@@ -58,16 +58,17 @@ int main() {
     srand(time(NULL));
 
     // get user inputs
-    int num_servers, num_clock_cycles;
+    int num_servers, num_clock_cycles, init_requests;
     std::cout << "Enter total number of web servers: ";
     cin >> num_servers;
     std::cout << "Enter number of clock cycles: ";
     cin >> num_clock_cycles;
+    std::cout << "Enter initial number of requests: ";
+    cin >> init_requests;
 
     // fill load balancer with requests
     LoadBalancer load_balancer(num_servers);
-    const int INITIAL_REQUESTS = num_servers * 100;
-    for (int i = 0; i < INITIAL_REQUESTS; i++) {
+    for (int i = 0; i < init_requests; i++) {
         load_balancer.add_request(generate_request());
     }
 
