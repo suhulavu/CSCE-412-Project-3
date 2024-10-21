@@ -1,0 +1,94 @@
+\hypertarget{classRequestQueue}{}\doxysection{Request\+Queue Class Reference}
+\label{classRequestQueue}\index{RequestQueue@{RequestQueue}}
+
+
+Manages a queue of web requests.  
+
+
+
+
+{\ttfamily \#include $<$request\+\_\+queue.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classRequestQueue_aa9c18ac5654af41e64ded2d7001c24f5}\label{classRequestQueue_aa9c18ac5654af41e64ded2d7001c24f5}} 
+\mbox{\hyperlink{classRequestQueue_aa9c18ac5654af41e64ded2d7001c24f5}{Request\+Queue}} ()
+\begin{DoxyCompactList}\small\item\em Constructs an empty \mbox{\hyperlink{classRequestQueue}{Request\+Queue}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRequestQueue_adbbda18f07fbfe710664e3096b9c552f}{push}} (\mbox{\hyperlink{structRequest}{Request}} req)
+\begin{DoxyCompactList}\small\item\em Adds a request to the queue. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structRequest}{Request}} \mbox{\hyperlink{classRequestQueue_a46f0a411a4ae00af3712e306ea2348c6}{pop}} ()
+\begin{DoxyCompactList}\small\item\em Removes and returns the next request from the queue. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classRequestQueue_ac2a2a546ac5579e45ca11f433a8a804c}{size}} ()
+\begin{DoxyCompactList}\small\item\em Gets the number of requests currently in the queue. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classRequestQueue_aaba0cd9ffc42a84ed759ffde763792d1}{empty}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the queue is empty. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages a queue of web requests. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRequestQueue_aaba0cd9ffc42a84ed759ffde763792d1}\label{classRequestQueue_aaba0cd9ffc42a84ed759ffde763792d1}} 
+\index{RequestQueue@{RequestQueue}!empty@{empty}}
+\index{empty@{empty}!RequestQueue@{RequestQueue}}
+\doxysubsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily bool Request\+Queue\+::empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if the queue is empty. 
+
+\begin{DoxyReturn}{Returns}
+True if the queue is empty, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRequestQueue_a46f0a411a4ae00af3712e306ea2348c6}\label{classRequestQueue_a46f0a411a4ae00af3712e306ea2348c6}} 
+\index{RequestQueue@{RequestQueue}!pop@{pop}}
+\index{pop@{pop}!RequestQueue@{RequestQueue}}
+\doxysubsubsection{\texorpdfstring{pop()}{pop()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structRequest}{Request}} Request\+Queue\+::pop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Removes and returns the next request from the queue. 
+
+\begin{DoxyReturn}{Returns}
+The request that was at the front of the queue. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This function should be called only if the queue is not empty. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classRequestQueue_adbbda18f07fbfe710664e3096b9c552f}\label{classRequestQueue_adbbda18f07fbfe710664e3096b9c552f}} 
+\index{RequestQueue@{RequestQueue}!push@{push}}
+\index{push@{push}!RequestQueue@{RequestQueue}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}}
+{\footnotesize\ttfamily void Request\+Queue\+::push (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structRequest}{Request}}}]{req }\end{DoxyParamCaption})}
+
+
+
+Adds a request to the queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & The request to be added. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRequestQueue_ac2a2a546ac5579e45ca11f433a8a804c}\label{classRequestQueue_ac2a2a546ac5579e45ca11f433a8a804c}} 
+\index{RequestQueue@{RequestQueue}!size@{size}}
+\index{size@{size}!RequestQueue@{RequestQueue}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily int Request\+Queue\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the number of requests currently in the queue. 
+
+\begin{DoxyReturn}{Returns}
+The number of requests in the queue. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+request\+\_\+queue.\+h\item 
+request\+\_\+queue.\+cpp\end{DoxyCompactItemize}

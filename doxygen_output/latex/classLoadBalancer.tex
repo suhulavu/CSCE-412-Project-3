@@ -1,0 +1,102 @@
+\hypertarget{classLoadBalancer}{}\doxysection{Load\+Balancer Class Reference}
+\label{classLoadBalancer}\index{LoadBalancer@{LoadBalancer}}
+
+
+Manages load balancing of web requests across multiple servers.  
+
+
+
+
+{\ttfamily \#include $<$load\+\_\+balancer.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLoadBalancer_ab13e6a94ef6b941498caf726e3843eb9}{Load\+Balancer}} (int num\+\_\+servers)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classLoadBalancer}{Load\+Balancer}} with a specified number of servers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLoadBalancer_a2d6169d69e74f9fc7491ee892f238c09}{add\+\_\+request}} (\mbox{\hyperlink{structRequest}{Request}} req)
+\begin{DoxyCompactList}\small\item\em Adds a new request to the load balancer\textquotesingle{}s queue. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLoadBalancer_a43bc5d63eb0b6b604bd4a71940ec0090}\label{classLoadBalancer_a43bc5d63eb0b6b604bd4a71940ec0090}} 
+void \mbox{\hyperlink{classLoadBalancer_a43bc5d63eb0b6b604bd4a71940ec0090}{increment\+\_\+clock\+\_\+cycle}} ()
+\begin{DoxyCompactList}\small\item\em Increments the current clock cycle of the simulation. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLoadBalancer_ac372c08db7270c7845794dc4fd67401b}\label{classLoadBalancer_ac372c08db7270c7845794dc4fd67401b}} 
+void \mbox{\hyperlink{classLoadBalancer_ac372c08db7270c7845794dc4fd67401b}{adjust\+\_\+server\+\_\+count}} ()
+\begin{DoxyCompactList}\small\item\em Adjusts the number of servers dynamically based on the current load. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLoadBalancer_a567cc79206278902d36795dfa1d7ef66}\label{classLoadBalancer_a567cc79206278902d36795dfa1d7ef66}} 
+void \mbox{\hyperlink{classLoadBalancer_a567cc79206278902d36795dfa1d7ef66}{distribute\+\_\+requests}} ()
+\begin{DoxyCompactList}\small\item\em Distributes requests from the queue to available servers. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classLoadBalancer_a52616bb92a6aa00d9cac339a903e5bbf}{get\+\_\+clock\+\_\+cyle}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current clock cycle of the simulation. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classLoadBalancer_a12974189c3c57ceef546b21eb7a767be}{get\+\_\+remaining\+\_\+requests}} ()
+\begin{DoxyCompactList}\small\item\em Gets the number of remaining requests in the request queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages load balancing of web requests across multiple servers. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classLoadBalancer_ab13e6a94ef6b941498caf726e3843eb9}\label{classLoadBalancer_ab13e6a94ef6b941498caf726e3843eb9}} 
+\index{LoadBalancer@{LoadBalancer}!LoadBalancer@{LoadBalancer}}
+\index{LoadBalancer@{LoadBalancer}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{LoadBalancer()}{LoadBalancer()}}
+{\footnotesize\ttfamily Load\+Balancer\+::\+Load\+Balancer (\begin{DoxyParamCaption}\item[{int}]{num\+\_\+servers }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classLoadBalancer}{Load\+Balancer}} with a specified number of servers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+\_\+servers} & The initial number of servers to start with. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLoadBalancer_a2d6169d69e74f9fc7491ee892f238c09}\label{classLoadBalancer_a2d6169d69e74f9fc7491ee892f238c09}} 
+\index{LoadBalancer@{LoadBalancer}!add\_request@{add\_request}}
+\index{add\_request@{add\_request}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{add\_request()}{add\_request()}}
+{\footnotesize\ttfamily void Load\+Balancer\+::add\+\_\+request (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structRequest}{Request}}}]{req }\end{DoxyParamCaption})}
+
+
+
+Adds a new request to the load balancer\textquotesingle{}s queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & The web request to be added. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLoadBalancer_a52616bb92a6aa00d9cac339a903e5bbf}\label{classLoadBalancer_a52616bb92a6aa00d9cac339a903e5bbf}} 
+\index{LoadBalancer@{LoadBalancer}!get\_clock\_cyle@{get\_clock\_cyle}}
+\index{get\_clock\_cyle@{get\_clock\_cyle}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{get\_clock\_cyle()}{get\_clock\_cyle()}}
+{\footnotesize\ttfamily int Load\+Balancer\+::get\+\_\+clock\+\_\+cyle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the current clock cycle of the simulation. 
+
+\begin{DoxyReturn}{Returns}
+The current clock cycle as an integer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLoadBalancer_a12974189c3c57ceef546b21eb7a767be}\label{classLoadBalancer_a12974189c3c57ceef546b21eb7a767be}} 
+\index{LoadBalancer@{LoadBalancer}!get\_remaining\_requests@{get\_remaining\_requests}}
+\index{get\_remaining\_requests@{get\_remaining\_requests}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{get\_remaining\_requests()}{get\_remaining\_requests()}}
+{\footnotesize\ttfamily int Load\+Balancer\+::get\+\_\+remaining\+\_\+requests (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the number of remaining requests in the request queue. 
+
+\begin{DoxyReturn}{Returns}
+The number of remaining requests as an integer. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+load\+\_\+balancer.\+h\item 
+load\+\_\+balancer.\+cpp\end{DoxyCompactItemize}

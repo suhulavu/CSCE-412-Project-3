@@ -1,0 +1,57 @@
+\hypertarget{structRequest}{}\doxysection{Request Struct Reference}
+\label{structRequest}\index{Request@{Request}}
+
+
+Represents a web request in the load balancer system.  
+
+
+
+
+{\ttfamily \#include $<$request.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{structRequest_a2b93ebbd0fbd5ebf8b15f5583b087a12}{ip\+\_\+in}}
+\item 
+string \mbox{\hyperlink{structRequest_ae3394ea2aa8654ec22bc87083a8d3bda}{ip\+\_\+out}}
+\item 
+int \mbox{\hyperlink{structRequest_a3cfb576ed0b5e08612f3de8bc7cd72e2}{time}}
+\item 
+char \mbox{\hyperlink{structRequest_aafa62a577a34455eb8be90021328b236}{job\+\_\+type}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a web request in the load balancer system. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structRequest_a2b93ebbd0fbd5ebf8b15f5583b087a12}\label{structRequest_a2b93ebbd0fbd5ebf8b15f5583b087a12}} 
+\index{Request@{Request}!ip\_in@{ip\_in}}
+\index{ip\_in@{ip\_in}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{ip\_in}{ip\_in}}
+{\footnotesize\ttfamily string Request\+::ip\+\_\+in}
+
+The incoming IP address of the request. \mbox{\Hypertarget{structRequest_ae3394ea2aa8654ec22bc87083a8d3bda}\label{structRequest_ae3394ea2aa8654ec22bc87083a8d3bda}} 
+\index{Request@{Request}!ip\_out@{ip\_out}}
+\index{ip\_out@{ip\_out}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{ip\_out}{ip\_out}}
+{\footnotesize\ttfamily string Request\+::ip\+\_\+out}
+
+The outgoing IP address for the response. \mbox{\Hypertarget{structRequest_aafa62a577a34455eb8be90021328b236}\label{structRequest_aafa62a577a34455eb8be90021328b236}} 
+\index{Request@{Request}!job\_type@{job\_type}}
+\index{job\_type@{job\_type}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{job\_type}{job\_type}}
+{\footnotesize\ttfamily char Request\+::job\+\_\+type}
+
+Type of the job\+: \textquotesingle{}P\textquotesingle{} for processing, \textquotesingle{}S\textquotesingle{} for streaming. \mbox{\Hypertarget{structRequest_a3cfb576ed0b5e08612f3de8bc7cd72e2}\label{structRequest_a3cfb576ed0b5e08612f3de8bc7cd72e2}} 
+\index{Request@{Request}!time@{time}}
+\index{time@{time}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{time}{time}}
+{\footnotesize\ttfamily int Request\+::time}
+
+Processing time for the request in clock cycles. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+request.\+h\end{DoxyCompactItemize}

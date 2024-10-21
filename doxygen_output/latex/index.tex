@@ -1,0 +1,27 @@
+\hypertarget{index_intro_sec}{}\doxysection{Introduction}\label{index_intro_sec}
+This project simulates a load balancer managing web requests across multiple web servers. The simulation generates web requests with random IP addresses, processing times, and job types, then distributes them to a set of web servers to simulate real-\/world load balancing scenarios.
+
+The simulation runs for a user-\/specified number of clock cycles, adjusting the number of servers dynamically and processing requests in each cycle.\hypertarget{index_features_sec}{}\doxysection{Features}\label{index_features_sec}
+
+\begin{DoxyItemize}
+\item Generates random web requests with unique IP addresses, processing times, and job types.
+\item Simulates the distribution of requests across multiple web servers.
+\item Dynamically allocates and deallocates servers based on the current load.
+\item Allows for user-\/configurable number of servers and simulation time (in clock cycles).
+\end{DoxyItemize}\hypertarget{index_usage_sec}{}\doxysection{Usage}\label{index_usage_sec}
+
+\begin{DoxyEnumerate}
+\item Compile the program using a suitable build system (e.\+g., Makefile).
+\item Run the program and specify the number of servers and clock cycles as input.
+\item The simulation will display the current clock cycle, the distribution of requests, and adjustments to the server count.
+\end{DoxyEnumerate}\hypertarget{index_files_sec}{}\doxysection{File Overview}\label{index_files_sec}
+
+\begin{DoxyItemize}
+\item {\ttfamily main.\+cpp}\+: The main driver program that runs the load balancer simulation.
+\item {\ttfamily \mbox{\hyperlink{request_8h_source}{request.\+h}}}\+: Defines the structure of a web request.
+\item {\ttfamily \mbox{\hyperlink{request__queue_8h_source}{request\+\_\+queue.\+h}}}, {\ttfamily request\+\_\+queue.\+cpp}\+: Manages the queue of requests.
+\item {\ttfamily \mbox{\hyperlink{web__server_8h_source}{web\+\_\+server.\+h}}}, {\ttfamily web\+\_\+server.\+cpp}\+: Represents individual web servers that process requests.
+\item {\ttfamily \mbox{\hyperlink{load__balancer_8h_source}{load\+\_\+balancer.\+h}}}, {\ttfamily load\+\_\+balancer.\+cpp}\+: Manages the distribution of requests and dynamic server allocation.
+\end{DoxyItemize}\hypertarget{index_install_sec}{}\doxysection{Installation}\label{index_install_sec}
+To generate the documentation, run Doxygen with the provided configuration file ({\ttfamily Doxyfile}). The documentation will be output in H\+T\+ML format.\hypertarget{index_authors_sec}{}\doxysection{Authors}\label{index_authors_sec}
+This project was implemented by Suhu Lavu. 

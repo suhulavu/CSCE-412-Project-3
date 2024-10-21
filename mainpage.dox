@@ -1,0 +1,36 @@
+/**
+ * @mainpage Load Balancer Simulation Documentation
+ * 
+ * @section intro_sec Introduction
+ * 
+ * This project simulates a load balancer managing web requests across multiple web servers. 
+ * The simulation generates web requests with random IP addresses, processing times, and job types, 
+ * then distributes them to a set of web servers to simulate real-world load balancing scenarios.
+ * 
+ * The simulation runs for a user-specified number of clock cycles, adjusting the number of servers 
+ * dynamically and processing requests in each cycle.
+ * 
+ * @section features_sec Features
+ * - Generates random web requests with unique IP addresses, processing times, and job types.
+ * - Simulates the distribution of requests across multiple web servers.
+ * - Dynamically allocates and deallocates servers based on the current load.
+ * - Allows for user-configurable number of servers and simulation time (in clock cycles).
+ * 
+ * @section usage_sec Usage
+ * 1. Compile the program using a suitable build system (e.g., Makefile).
+ * 2. Run the program and specify the number of servers and clock cycles as input.
+ * 3. The simulation will display the current clock cycle, the distribution of requests, and adjustments to the server count.
+ * 
+ * @section files_sec File Overview
+ * - `main.cpp`: The main driver program that runs the load balancer simulation.
+ * - `request.h`: Defines the structure of a web request.
+ * - `request_queue.h`, `request_queue.cpp`: Manages the queue of requests.
+ * - `web_server.h`, `web_server.cpp`: Represents individual web servers that process requests.
+ * - `load_balancer.h`, `load_balancer.cpp`: Manages the distribution of requests and dynamic server allocation.
+ * 
+ * @section install_sec Installation
+ * To generate the documentation, run Doxygen with the provided configuration file (`Doxyfile`). The documentation will be output in HTML format.
+ * 
+ * @section authors_sec Authors
+ * This project was implemented by Suhu Lavu.
+ */
