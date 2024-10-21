@@ -79,7 +79,7 @@ int main() {
 
         // 50% chance to add requests to queue
         if (rand() % 100 < 80) {
-            int num_reqs = rand() % 20 + 1;
+            int num_reqs = rand() % 10 + 1;
             for (int i = 0; i < num_reqs; i++) {
                 Request new_req = generate_request();
                 load_balancer.add_request(new_req);
