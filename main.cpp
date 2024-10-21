@@ -59,9 +59,9 @@ int main() {
 
     // get user inputs
     int num_servers, num_clock_cycles;
-    cout << "Enter total number of web servers: ";
+    std::cout << "Enter total number of web servers: ";
     cin >> num_servers;
-    cout << "Enter number of clock cycles: ";
+    std::cout << "Enter number of clock cycles: ";
     cin >> num_clock_cycles;
 
     // fill load balancer with requests
@@ -71,31 +71,43 @@ int main() {
         load_balancer.add_request(generate_request());
     }
 
+    // print initial conditions
+    std::cout << "Initial Queue Size: " << load_balancer.get_remaining_requests() << " requests." << endl;
+    std::cout << "Request completion time is between 1 and 5 milliseconds." << endl;
+    std::cout << "Total Number of Servers: " << load_balancer.get_active_servers() << endl;
+
+
     // run simulation
     while (load_balancer.get_clock_cyle() <= num_clock_cycles) {
-        cout << "Current Clock Cycle: " << load_balancer.get_clock_cyle() << endl;
+        std::cout << "Current Clock Cycle: " << load_balancer.get_clock_cyle() << endl;
+        std::cout << "Current Number of Active Servers: " << load_balancer.get_active_servers() << endl;
+
         // process requests on current clock cycle
         load_balancer.distribute_requests();
 
-        // 50% chance to add requests to queue
+        // 80% chance to add requests to queue
         if (rand() % 100 < 80) {
             int num_reqs = rand() % 20 + 1;
             for (int i = 0; i < num_reqs; i++) {
                 Request new_req = generate_request();
                 load_balancer.add_request(new_req);
             }
-            cout << num_reqs << " new request(s) added to request queue." << endl;
+            std::cout << num_reqs << " new request(s) added to request queue." << endl;
         }
 
         // dynamically adjust servers
-        // load_balancer.adjust_server_count();
+        load_balancer.adjust_server_count();
 
         // increment clock cycle
         load_balancer.increment_clock_cycle();
 
         // output number of requests remaining
-        cout << "Number of requests remaining: " << load_balancer.get_remaining_requests() << endl;
+        std::cout << "Number of requests remaining: " << load_balancer.get_remaining_requests() << endl;
     }
+
+    // output
+    std::cout << "Final Queue Size: " << load_balancer.get_remaining_requests() << " requests." << endl;
+    std::cout << "Final Number of Active Servers: " << load_balancer.get_active_servers() << endl;
 
     return 0;
 }

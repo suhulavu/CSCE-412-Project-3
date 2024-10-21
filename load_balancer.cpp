@@ -1,7 +1,7 @@
 #include "load_balancer.h"
 #include <iostream>
 
-LoadBalancer::LoadBalancer(int num_servers) : num_servers(num_servers), curr_clock_cycle(1), active_servers(num_servers) {
+LoadBalancer::LoadBalancer(int num_servers) : num_servers(num_servers), active_servers(num_servers), curr_clock_cycle(1) {
     for (int i = 0; i < num_servers; i++) {
         WebServer server = WebServer(i + 1);
         servers.push_back(server);
